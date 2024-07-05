@@ -49,11 +49,11 @@ layer_up = true
 layer_down = true
 caps_word_on = true
 caps_word_off = true
-program_start = true
-program_exit = true
-error = true
-keyboard_connect = true
-keyboard_disconnect = true
+program_start = false
+program_exit = false
+error = false
+keyboard_connect = false
+keyboard_disconnect = false
 
 [Logging]
 loglevel = INFO
@@ -88,11 +88,11 @@ class AccessibilityWatcher:
             "layer_down": self.config.getboolean('EnabledSounds', 'layer_down', fallback=True),
             "caps_word_on": self.config.getboolean('EnabledSounds', 'caps_word_on', fallback=True),
             "caps_word_off": self.config.getboolean('EnabledSounds', 'caps_word_off', fallback=True),
-            "program_start": self.config.getboolean('EnabledSounds', 'program_start', fallback=True),
-            "program_exit": self.config.getboolean('EnabledSounds', 'program_exit', fallback=True),
-            "error": self.config.getboolean('EnabledSounds', 'error', fallback=True),
-            "keyboard_connect": self.config.getboolean('EnabledSounds', 'keyboard_connect', fallback=True),
-            "keyboard_disconnect": self.config.getboolean('EnabledSounds', 'keyboard_disconnect', fallback=True)
+            "program_start": self.config.getboolean('EnabledSounds', 'program_start', fallback=False),
+            "program_exit": self.config.getboolean('EnabledSounds', 'program_exit', fallback=False),
+            "error": self.config.getboolean('EnabledSounds', 'error', fallback=False),
+            "keyboard_connect": self.config.getboolean('EnabledSounds', 'keyboard_connect', fallback=False),
+            "keyboard_disconnect": self.config.getboolean('EnabledSounds', 'keyboard_disconnect', fallback=False)
         }
 
         log_level_str = self.config.get('Logging', 'loglevel', fallback='INFO').upper()
