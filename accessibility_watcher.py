@@ -290,6 +290,7 @@ def create_default_config(config_file):
         f.write(DEFAULT_CONFIG)
     print(f"Default configuration file created at {config_file}.")
     print("Please edit the configuration file and run accessibility_watcher again.")
+    print("The Device section of the configuration must be set correctly or you will have many a frustration.")
     sys.exit(0)
 
 if __name__ == "__main__":
