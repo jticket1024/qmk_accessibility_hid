@@ -5,6 +5,15 @@ Written by Jeremiah Ticket
 
 This module provides accessibility features for QMK firmware, including handling layer changes and `Caps Word` functionality. The module is designed to be included in your keymap.
 
+## What it does
+
+The module on the keyboard sends a hid event using raw_hid_send when a layer state changes, or when caps_word is turned on or off via your configured method. 
+The python script listens for these events, but also keeps track of the layer for layer up/down, so as to avoid double sounds.
+
+### Why sounds, and not speech?
+
+Sounds are simply faster. If I'm typing, I don't want to hear other things speaking, or if I'm using my screen reader, and a layer event happens, this could cause interruptions in speech.
+
 ## Features
 
 - Handles layer changes and notifies via HID
