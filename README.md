@@ -12,7 +12,7 @@ The python script listens for these events, but also keeps track of the layer fo
 
 ### Why sounds, and not speech?
 
-Not all keyboards have speakers. I have a moonlander, and a Planck EZ. They have speakers. But I have friends who have keyboards that do not, as well as the keyboard I am going to upgrade to, does not. Also, sounds are simply faster. If I'm typing, I don't want to hear other things speaking, or if I'm using my screen reader, and a layer event happens, this could cause interruptions in speech.
+Not all keyboards have speakers. I have a moonlander, and a Planck EZ. They have speakers. But I have friends who have keyboards that do not. Also, sounds are simply faster. If I'm typing, I don't want to hear other things speaking, or if I'm using my screen reader, and a layer event happens, this could cause interruptions in speech.
 
 ### To do:
 
