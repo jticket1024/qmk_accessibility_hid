@@ -32,7 +32,7 @@ usage_page = 0x1
 usage = 0x6
 
 [Sounds]
-volume = 0.5
+volume = 0.25
 layer_up = sounds/layer_up.wav
 layer_down = sounds/layer_down.wav
 caps_word_on = sounds/caps_word_on.wav
@@ -68,7 +68,7 @@ class AccessibilityWatcher:
         self.PRODUCT_ID = int(self.config['Device']['pid'], 16)
         self.USAGE_PAGE = int(self.config['Device']['usage_page'], 16)
         self.USAGE = int(self.config['Device']['usage'], 16)
-        self.VOLUME = self.config.getfloat('Sounds', 'volume', fallback=0.5)  # Global volume control
+        self.VOLUME = self.config.getfloat('Sounds', 'volume', fallback=0.25)  # Global volume control
 
         self.SOUNDS = {
             "layer_up": self.config.get('Sounds', 'layer_up', fallback='sounds/layer_up.wav'),
