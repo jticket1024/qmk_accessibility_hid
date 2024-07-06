@@ -11,7 +11,6 @@
 
 # You should have received a copy of the GNU General Public License along with qmk_accessibility_hid. If not, see <https://www.gnu.org/licenses/>.
 
-
 import hid
 import os
 import time
@@ -130,7 +129,13 @@ class AccessibilityWatcher:
                                 output=True)
                 data = wf.readframes(1024)
                 while data and not self.terminate_event.is_set():
-                    stream.write(data)
+                    audio_data = bytearray(data)
+                    for i in range(0, len(audio_data), 2):
+                        audio_frame = int.from_bytes(audio_data[i:i+2], byteorder='little', signed=True)
+                        adjusted_frame = int(audio_frame * self.VOLUME)
+                        adjusted_frame = max(-32768, min(32767, adjusted_frame))
+                        audio_data[i:i+2] = adjusted_frame.to_bytes(2, byteorder='little', signed=True)
+                    stream.write(bytes(audio_data))
                     data = wf.readframes(1024)
                 stream.stop_stream()
                 stream.close()
