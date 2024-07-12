@@ -40,7 +40,7 @@ For some reason, when writing this initially, I got multiple events on layer cha
    Clone or download the `qmk_accessibility_hid` folder from the repository and place it in the same directory as your `keymap.c`.
 
    ```bash
-   git clone https://git.terrible.fail/jticket/qmk_accessibility_hid.git
+   git clone https://github.com/jticket1024/qmk_accessibility_hid.git
    ```
 
 2. **Modify `rules.mk`**
